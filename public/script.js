@@ -122,8 +122,8 @@ async function startWebRTC() {
                   "turn:turn.cloudflare.com:3478?transport=tcp",
                   "turns:turn.cloudflare.com:5349?transport=tcp"
                 ],
-                username: 'your-turn-username',
-                credential: 'your-turn-password'
+                username: '${{ secrets.TURN__USER }}',
+                credential: '${{ secrets.TURN_PASS }}'
             }
         ]
     });
