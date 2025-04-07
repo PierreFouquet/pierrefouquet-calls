@@ -7,11 +7,13 @@ export default {
             return new Response(null, { status: 101, webSocket: true });
         }
 
-        // Serve static assets from Cloudflare Pages
-        try {
-            const pageResponse = await env.ASSETS.fetch(request);
-            return pageResponse;
-        } catch (e) {
+            // Serve static assets from Cloudflare Pages
+            async fetch(request) {
+            const url = new URL(request.url);
+            const file = await env.ASSETS.fetch(request);
+            return file;
+        },
+        }; catch (e) {
             return new Response("Not found", { status: 404 });
         }
     },
