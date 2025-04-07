@@ -8,7 +8,7 @@ export default {
         }
 
         // Serve static assets from Cloudflare Pages
-        try {
+        async fetch(request) {
             const url = new URL(request.url);
             const file = await env.ASSETS.fetch(request);
             return file;
