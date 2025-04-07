@@ -12,7 +12,7 @@ export default {
             const pageResponse = await env.ASSETS.fetch(request);
             return pageResponse;
         } catch (e) {
-            return new Response("Not found", { status: 404 });
+            return new Response("404 - Not found", { status: 404 });
         }
     },
 };
