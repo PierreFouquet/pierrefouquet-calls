@@ -1,5 +1,4 @@
 name = "scrncheat-calls"
-main = "worker.js"
 main = "public/index.html"
 compatibility_date = "2025-04-07"
 
