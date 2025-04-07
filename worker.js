@@ -8,10 +8,9 @@ export default {
         }
 
         // Serve static assets from Cloudflare Pages
-        async fetch(request) {
-            const url = new URL(request.url);
-            const file = await env.ASSETS.fetch(request);
-            return file;
+        try {
+            const pageResponse = await env.ASSETS.fetch(request);
+            return pageResponse;
         } catch (e) {
             return new Response("Not found", { status: 404 });
         }
