@@ -1,5 +1,5 @@
 name = "scrncheat-calls"
-main = "./public/index.html"
+main = "./worker.js"
 compatibility_date = "2025-04-07"
 
 
