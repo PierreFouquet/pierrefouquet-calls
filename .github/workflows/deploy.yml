@@ -8,6 +8,9 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      TURN_USER: ${{ secrets.TURN_USER }}
+      TURN_CRED: ${{ secrets.TURN_CRED }}
     name: Deploy
     steps:
       - uses: actions/checkout@v4
