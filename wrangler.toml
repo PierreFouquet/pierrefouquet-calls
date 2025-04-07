@@ -4,4 +4,4 @@ compatibility_date = "2025-04-07"
 
 
 [site]
-bucket = "."
+bucket = "./public"
