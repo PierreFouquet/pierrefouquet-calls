@@ -1,7 +1,7 @@
 name = "scrncheat-calls"
 main = "./worker.js"
 compatibility_date = "2025-04-07"
-rules = [{type = "Data", globs = ["worker.js"], fallthrough = true}, {type = "Data", globs = ["public/index.html"]}]
 
-[site]
-bucket = "./public"
+[assets]
+directory = "./public"
+binding = "ASSETS"
