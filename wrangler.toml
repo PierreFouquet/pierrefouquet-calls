@@ -1,7 +1,7 @@
 name = "scrncheat-calls"
 main = "./worker.js"
 compatibility_date = "2024-04-04"
-CLOUDFLARE_API_TOKEN = "${{secrets.CF_API_TOKEN}}"
+
 
 [site]
 bucket = "./public"
