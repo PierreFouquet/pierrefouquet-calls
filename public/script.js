@@ -156,7 +156,6 @@ async function startWebRTC() {
         console.error('Error accessing media:', error);
         resetCallUI();
     }
-}
 
 function hangUpCall() {
     if (peerConnection) {
