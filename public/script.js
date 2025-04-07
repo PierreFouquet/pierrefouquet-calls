@@ -114,16 +114,28 @@ async function startWebRTC() {
     if (peerConnection) return;
 
     peerConnection = new RTCPeerConnection({
-        iceServers: [
-            { urls: 'stun:stun.l.google.com:19302' },
-            // **Replace with your Cloudflare Calls TURN server details:**
+        "iceServers":
+        [{
+            "urls":[
+                "stun:stun.cloudflare.com:3478",
+                "stun:stun.cloudflare.com:53"
+            ]},
             {
-                urls: 'turn:your-cloudflare-turn-hostname:3478',
-                username: 'your-turn-username',
-                credential: 'your-turn-password'
-            }
-        ]
-    });
+                "urls":
+                [
+                    "turn:turn.cloudflare.com:3478?transport=udp",
+                    "turn:turn.cloudflare.com:53?transport=udp",
+                    "turn:turn.cloudflare.com:3478?transport=tcp",
+                    "turn:turn.cloudflare.com:80?transport=tcp",
+                    "turns:turn.cloudflare.com:5349?transport=tcp",
+                    "turns:turn.cloudflare.com:443?transport=tcp"
+                ],
+                    "username":"${{secrets.TURN_USER}}",
+                    "credential":"${{secrets.TURN_CRED}}"
+                }
+            ]
+        }
+    )};
 
     peerConnection.ontrack = (event) => {
         if (event.streams && event.streams[0]) {
