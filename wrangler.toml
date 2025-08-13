@@ -1,7 +1,14 @@
-name = "scrncheat-calls"
+name = "pierrefouquet-calls"
 main = "./worker.js"
-compatibility_date = "2025-04-07"
+compatibility_date = "2025-08-13"
+
+routes = [
+  { pattern = "calls.pierrefouquet.co.uk", custom_domain = true }
+]
 
 [assets]
 directory = "./public"
 binding = "ASSETS"
+
+[observability.logs]
+enabled = true
